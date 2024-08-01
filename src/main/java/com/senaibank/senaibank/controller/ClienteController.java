@@ -1,13 +1,16 @@
-package com.senaibank.controller;
+package com.senaibank.senaibank.controller;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.*;
 
-import com.senaibank.classes.*;
-import com.senaibank.service.*;
+
+import com.senaibank.senaibank.classes.*;
+import com.senaibank.senaibank.service.*;
 
 
 @RestController
@@ -19,7 +22,7 @@ public class ClienteController {
 
     // Buscar todos os clientes - getAll
     @GetMapping
-    public ResponseEntity<List<Cliente>> getAll() {
+    public ResponseEntity<List<Cliente>> getAllclientes() {
         List<Cliente> clientes = clienteService.getAll();
         return ResponseEntity.ok(clientes);
     }

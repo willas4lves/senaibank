@@ -1,10 +1,11 @@
-package com.senaibank.service;
+package com.senaibank.senaibank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.senaibank.classes.ContaBancaria;
-import com.senaibank.repository.ContaBancariaRepository;
+import com.senaibank.senaibank.classes.ContaBancaria;
+import com.senaibank.senaibank.repository.ContaBancariaRepository;
+
 import java.util.List;
 
 @Service

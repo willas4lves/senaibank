@@ -1,4 +1,4 @@
-package com.senaibank.classes;
+package com.senaibank.senaibank.classes;
 
 
 import java.time.LocalDate;
@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @EqualsAndHashCode(of = "id")
 @Entity
-@Table(name = "Clientes")
+@Table(name = "clientes")
 public class Cliente {
     @Id  @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

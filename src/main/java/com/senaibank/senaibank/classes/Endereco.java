@@ -1,4 +1,4 @@
-package com.senaibank.classes;
+package com.senaibank.senaibank.classes;
 
 import jakarta.persistence.*;
 import com.google.gson.Gson;

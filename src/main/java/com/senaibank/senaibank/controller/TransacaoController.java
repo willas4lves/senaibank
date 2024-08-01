@@ -1,11 +1,10 @@
-package com.senaibank.controller;
+package com.senaibank.senaibank.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-
-import com.senaibank.classes.Transacao;
-import com.senaibank.service.TransacaoService;
+import com.senaibank.senaibank.classes.Transacao;
+import com.senaibank.senaibank.service.TransacaoService;
 
 import java.util.*;
 

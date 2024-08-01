@@ -1,12 +1,12 @@
-package com.senaibank.service;
+package com.senaibank.senaibank.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.senaibank.repository.*;
-import com.senaibank.classes.Cliente;
+import com.senaibank.senaibank.repository.*;
+import com.senaibank.senaibank.classes.Cliente;
 
 @Service
 public class ClienteService {
@@ -39,6 +39,8 @@ public class ClienteService {
         clienteExistente.setCpf(cliente.getCpf());
         clienteExistente.setTelefone(cliente.getTelefone());
         clienteExistente.setEmail(cliente.getEmail());
+        clienteExistente.setEndereco(cliente.getEndereco());
+        clienteExistente.setDataNascimento(cliente.getDataNascimento());
 
         return clienteRepository.save(clienteExistente);
     }

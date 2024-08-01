@@ -1,4 +1,4 @@
-package com.senaibank.classes;
+package com.senaibank.senaibank.classes;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,7 +8,7 @@ import java.util.*;
 @Data
 @Entity
 @EqualsAndHashCode(of = "id")
-@Table()
+@Table(name = "transacoes")
 public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,9 +17,12 @@ public class Transacao {
     private Date data;
 
     @ManyToOne
+    @JoinColumn(name = "conta_origem", referencedColumnName = "numero")
     private ContaBancaria contaOrigem;
 
     @ManyToOne
+    @JoinColumn(name = "conta_destino", referencedColumnName = "numero")
     private ContaBancaria contaDestino;
+    
 
 }

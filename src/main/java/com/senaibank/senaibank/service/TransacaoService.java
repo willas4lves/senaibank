@@ -1,10 +1,11 @@
-package com.senaibank.service;
+package com.senaibank.senaibank.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.senaibank.classes.Transacao;
-import com.senaibank.repository.TransacaoRepository;
+import com.senaibank.senaibank.classes.Transacao;
+import com.senaibank.senaibank.repository.TransacaoRepository;
+
 import java.util.*;
 
 @Service

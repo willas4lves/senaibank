@@ -1,18 +1,21 @@
-package com.senaibank.classes;
+package com.senaibank.senaibank.classes;
 
 import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "id")
+@Table(name = "contas_bancarias")
 public class ContaBancaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long numero;
-    private double saldo;
+    private double saldo = 0.0;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(name = "conta_bancaria", referencedColumnName = "id")
     private Cliente cliente;
+
+    
 
 }
