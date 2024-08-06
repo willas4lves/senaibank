@@ -19,7 +19,7 @@ public class ContaBancariaController {
     private ContaBancariaService contaBancariaService;
 
     @PostMapping
-    public ContaBancaria criarContaBancaria(@RequestBody ContaBancaria contaBancaria) {
+    public ContaBancaria create(@RequestBody ContaBancaria contaBancaria) {
         return contaBancariaService.criarContaBancaria(contaBancaria);
     }
 

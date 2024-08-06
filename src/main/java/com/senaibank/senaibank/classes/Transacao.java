@@ -13,8 +13,14 @@ public class Transacao {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
     private double valor;
-    private Date data;
+    
+    @Column(nullable = false)
+    @Enumerated
+    private TipoTransacao tipoTransacao;
+
+    
 
     @ManyToOne
     @JoinColumn(name = "conta_origem", referencedColumnName = "numero")
