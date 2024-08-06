@@ -9,7 +9,7 @@ import lombok.Data;
 public class ContaBancaria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long numero;
+    private Long id;
 
     @Column(nullable = false)
     private double saldo = 0.0;

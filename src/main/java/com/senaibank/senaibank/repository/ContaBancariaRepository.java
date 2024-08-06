@@ -6,4 +6,5 @@ import com.senaibank.senaibank.classes.ContaBancaria;
 
 public interface ContaBancariaRepository extends JpaRepository<ContaBancaria, Long> {
 
+    void save(String contaOrigem);
 }

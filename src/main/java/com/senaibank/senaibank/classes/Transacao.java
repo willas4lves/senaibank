@@ -3,7 +3,7 @@ package com.senaibank.senaibank.classes;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import jakarta.persistence.*;
-import java.util.*;
+
 
 @Data
 @Entity

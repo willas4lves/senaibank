@@ -11,26 +11,25 @@ import java.util.List;
 @Service
 public class ContaBancariaService {
     @Autowired
-    private ContaBancariaRepository contaBancariaRepository;
-
-    public ContaBancaria criarContaBancaria(ContaBancaria contaBancaria){
-        return contaBancariaRepository.save(contaBancaria);
+    private ContaBancariaRepository contaBankRepository;
+    public ContaBancaria create(ContaBancaria contaBank) {
+        return contaBankRepository.save(contaBank);
     }
 
-    public List<ContaBancaria> buscarTodasContas(){
-        return contaBancariaRepository.findAll();
+    public List<ContaBancaria> findAll() {
+        return contaBankRepository.findAll();
     }
 
-    public ContaBancaria buscarContaPorNumero(Long numero) {
-        return contaBancariaRepository.findById(numero).orElse(null);
+    public ContaBancaria findById(Long id) {
+        return contaBankRepository.findById(id).orElse(null);
     }
 
-    public ContaBancaria atualizarConta(ContaBancaria contaBancaria) {
-        return contaBancariaRepository.save(contaBancaria);
+    public ContaBancaria update(ContaBancaria contaBank) {
+        return contaBankRepository.save(contaBank);
     }
 
-    public void deletarConta(Long numero) {
-        contaBancariaRepository.deleteById(numero);
+    public void delete(Long id) {
+        contaBankRepository.deleteById(id);
     }
-
+    
 }

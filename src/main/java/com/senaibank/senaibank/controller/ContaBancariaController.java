@@ -1,47 +1,42 @@
 package com.senaibank.senaibank.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import com.senaibank.senaibank.classes.ContaBancaria;
 import com.senaibank.senaibank.service.ContaBancariaService;
-
-import java.util.*;
-
-
 @RestController
 @RequestMapping("/contas")
-public class ContaBancariaController {
-
+public class Contabancariacontroller {
 
     @Autowired
-    private ContaBancariaService contaBancariaService;
+    private ContaBancariaService contaBankService;
 
     @PostMapping
-    public ContaBancaria create(@RequestBody ContaBancaria contaBancaria) {
-        return contaBancariaService.criarContaBancaria(contaBancaria);
+    public ResponseEntity<Object> create(@RequestBody ContaBancaria contaBank) {
+        return ResponseEntity.ok(contaBankService.create(contaBank));
     }
 
     @GetMapping
-    public List<ContaBancaria> buscarTodasContas() {
-        return contaBancariaService.buscarTodasContas();
+    public ResponseEntity<Object> findAll() {
+        return ResponseEntity.ok(contaBankService.findAll());
     }
 
-    @GetMapping("/{numero}")
-    public ContaBancaria buscarContaPorNumero(@PathVariable Long numero) {
-        return contaBancariaService.buscarContaPorNumero(numero);
+    @GetMapping()
+    public ResponseEntity<Object> findById(@PathVariable Long id) {
+        return ResponseEntity.ok(contaBankService.findById(id));
     }
 
-    @PutMapping("/{numero}")
-    public ContaBancaria atualizarConta(@PathVariable Long numero, @RequestBody ContaBancaria contaBancaria) {
-        contaBancaria.setNumero(numero);
-        return contaBancariaService.atualizarConta(contaBancaria);
+    @PutMapping()
+    public ResponseEntity<Object> update(@PathVariable Long id, @RequestBody ContaBancaria contaBank) {
+        contaBank.setId(id);
+        return ResponseEntity.ok(contaBankService.update(contaBank));
     }
 
-    @DeleteMapping("/{numero}")
-    public void deletarConta(@PathVariable Long numero) {
-        contaBancariaService.deletarConta(numero);
+    @DeleteMapping()
+    public ResponseEntity<Void> delete(@PathVariable Long id) {
+        contaBankService.delete(id);
+        return ResponseEntity.noContent().build();
     }
-
 }
