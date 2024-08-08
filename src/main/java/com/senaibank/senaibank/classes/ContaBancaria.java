@@ -19,10 +19,19 @@ public class ContaBancaria {
     private Cliente cliente;
 
     public boolean temSaldo(double valor) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'temSaldo'");
+        if(this.getSaldo() >= valor) {
+            return true;
+        } 
+        return false;
     }
+    public void depositar(double valor) {
+        saldo += valor;
+    }
+    public void sacar(double valor) {
+        saldo -= valor;
+    }
+}
 
     
 
-}
+
