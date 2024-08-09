@@ -1,5 +1,9 @@
 package com.senaibank.senaibank.repository;
 
-public interface EnderecoRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.senaibank.senaibank.classes.Endereco;
+
+public interface EnderecoRepository extends JpaRepository<Endereco, Long> {
 
 }

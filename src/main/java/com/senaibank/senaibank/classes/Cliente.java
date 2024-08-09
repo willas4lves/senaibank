@@ -35,4 +35,8 @@ public class Cliente {
     private LocalDate dataNascimento;
 
 
+    @Column(name = "cliente_ativo", nullable = false)
+    private boolean ativo = true;
+
+
 }
